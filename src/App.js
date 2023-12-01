@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import Navbar from './components/Navbar'
+import ErrorPage from './pages/ErrorPage'
+import { useState } from 'react'
+import ProjectsPage from './pages/ProjectsPage'
+import ProjectDetail from './pages/ProjectDetail'
+import SearchProject from './pages/SearchProject'
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route
+          path='/projects'
+          element={<ProjectsPage isLoggedIn={isLoggedIn} />}
+        />
+        <Route path='/projects/:projectId' element={<ProjectDetail />} />
+        <Route path='/project-search' element={<SearchProject />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
