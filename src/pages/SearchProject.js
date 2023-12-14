@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useQuery } from 'react-router-dom'
-
-import projectData from '../projects-data.json'
+import React from 'react'
 
 const SearchProject = () => {
   //   let query = useQuery()

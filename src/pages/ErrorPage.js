@@ -1,13 +1,8 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
 const imgURL =
   'https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/react-routing/404.gif'
 
 const ErrorPage = () => {
-  const [params, setParams] = useSearchParams()
-
-  console.log(params.get('q'))
-  console.log(params.get('name'))
   return (
     <div>
       <h1>404</h1>

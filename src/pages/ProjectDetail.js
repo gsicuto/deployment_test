@@ -13,7 +13,7 @@ const ProjectDetail = () => {
       (project) => project._id === projectId
     )
     setProject(foudedProject)
-  }, [])
+  }, [projectId])
 
   return (
     <div>

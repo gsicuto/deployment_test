@@ -1,4 +1,3 @@
-import logo from './logo.svg'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
@@ -11,7 +10,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import SearchProject from './pages/SearchProject'
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [isLoggedIn] = useState(true)
   return (
     <div className='App'>
       <Navbar />
